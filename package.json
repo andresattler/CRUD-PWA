@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode development --config webpack.dev.js ",
-    "build": "webpack --mode production  --config webpack.prod.js",
+    "build": "webpack --mode production  --config webpack.common.js",
     "test": "jest"
   },
   "devDependencies": {
