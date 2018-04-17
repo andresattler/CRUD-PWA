@@ -3,19 +3,32 @@ import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import { PersistGate } from 'redux-persist/integration/react'
 
 import App from './app'
 import reducer from './reducer'
 
 const rootEl = document.getElementById('app')
 
-const store = createStore(reducer)
+const persistConfig = {
+  key: 'root',
+  storage
+}
+
+const persistedReducer = persistReducer(persistConfig, reducer)
+
+const store = createStore(persistedReducer)
+const persistor = persistStore(store)
 
 const wrapApp = AppComponent =>
   <Provider store={store}>
-    <AppContainer>
-      <AppComponent />
-    </AppContainer>
+    <PersistGate loading={null} persistor={persistor}>
+      <AppContainer>
+        <AppComponent />
+      </AppContainer>
+    </PersistGate>
   </Provider>
 
 render(wrapApp(App), rootEl)
