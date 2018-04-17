@@ -1,60 +1,46 @@
-import reducer from './index.js'
+import reducer, { initialState } from './index.js'
 import { ADD_ARTICLE, REMOVE_ARTICLE, UPDATE_ARTICLE } from '../actions'
 
 test('default', () => {
-  expect(reducer(undefined, {})).toEqual({ articles: [] })
+  expect(reducer(undefined, {})).toEqual(initialState)
 })
 
 test('test AddArticle', () => {
   expect(reducer(undefined,
     { type: ADD_ARTICLE,
       article:
-        { id: 0,
+        { id: 1,
           title: 'hello world',
           text: 'test1234'
         }
-    })
-  ).toEqual({
-    articles: [
-      { id: 0,
-        title: 'hello world',
-        text: 'test1234'
-      }
-    ]
-  })
+    }).articles).toEqual([
+    ...initialState.articles,
+    { id: 1,
+      title: 'hello world',
+      text: 'test1234'
+    }
+  ])
 })
 
 test('test removeArticle', () => {
-  expect(reducer({
-    articles: [
-      { id: 0,
-        title: 'hello world',
-        text: 'test1234'
-      }
-    ]},
-  { type: REMOVE_ARTICLE,
-    id: 0
-  })).toEqual({ articles: [] })
+  expect(reducer(initialState,
+    { type: REMOVE_ARTICLE,
+      id: 0
+    }).articles).toEqual([])
 })
 
 test('test updateArticle', () => {
-  expect(reducer({
-    articles: [
-      { id: 0,
-        title: 'hello world',
-        text: 'test1234'
+  expect(reducer(initialState,
+    { type: UPDATE_ARTICLE,
+      article: {
+        id: 0,
+        title: 'hello update!',
+        text: 'I´ve got updated'
       }
-    ]},
-  { type: UPDATE_ARTICLE,
-    article: {
-      id: 0,
-      title: 'hello update!',
-      text: 'I´ve got updated'
-    }
-  })).toEqual({ articles: [
+    }).articles).toEqual([
     { id: 0,
       title: 'hello update!',
       text: 'I´ve got updated'
     }
-  ]})
+  ])
 })

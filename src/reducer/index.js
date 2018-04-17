@@ -1,10 +1,10 @@
 import { ADD_ARTICLE, REMOVE_ARTICLE, UPDATE_ARTICLE } from '../actions'
 
-const initialState = {
+export const initialState = {
   articles: [
     { id: 0,
-      title: 'test',
-      text: 'test'
+      title: 'hello world!',
+      text: 'test 1234'
     }
   ]
 }
