@@ -1,5 +1,5 @@
 import reducer, { initialState } from './index.js'
-import { ADD_ARTICLE, REMOVE_ARTICLE, UPDATE_ARTICLE } from '../actions'
+import { ADD_ARTICLE, REMOVE_ARTICLE, UPDATE_ARTICLE, TOGGLE_MODAL } from '../actions'
 
 test('default', () => {
   expect(reducer(undefined, {})).toEqual(initialState)
@@ -43,4 +43,12 @@ test('test updateArticle', () => {
       text: 'I´ve got updated'
     }
   ])
+})
+
+test('test toggleModal', () => {
+  expect(reducer(initialState, { type: TOGGLE_MODAL }))
+    .toEqual({
+      ...initialState,
+      showModal: true
+    })
 })
