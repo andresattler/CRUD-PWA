@@ -2,10 +2,10 @@ import React from 'react'
 
 import Article from '../Article'
 
-const ArticleList = ({ articles }) =>
+const ArticleList = ({ articles, toggleModal }) =>
   <div>
-    {articles.map(article =>
-      <Article key={article.id} article={article} />
+    {articles.map((article, i) =>
+      <Article key={article.id} toggleModal={toggleModal} article={article} index={i} />
     )}
   </div>
 

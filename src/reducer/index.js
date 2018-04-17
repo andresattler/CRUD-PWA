@@ -1,7 +1,8 @@
-import { ADD_ARTICLE, REMOVE_ARTICLE, UPDATE_ARTICLE, TOGGLE_MODAL } from '../actions'
+import { ADD_ARTICLE, REMOVE_ARTICLE, UPDATE_ARTICLE, TOGGLE_MODAL, SELECT_ARTICLE } from '../actions'
 
 export const initialState = {
   showModal: false,
+  selectedI: -1,
   articles: [
     { id: 0,
       title: 'hello world!',
@@ -31,6 +32,11 @@ const reducer = (state = initialState, action) => {
       return ({
         ...state,
         showModal: !state.showModal
+      })
+    case SELECT_ARTICLE:
+      return ({
+        ...state,
+        selectedI: action.index
       })
     default:
       return state
