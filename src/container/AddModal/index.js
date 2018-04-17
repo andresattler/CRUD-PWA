@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { toggleModal, addArticle, updateArticle } from '../../actions/'
+import { toggleModal, addArticle, updateArticle, removeArticle } from '../../actions/'
 import Modal from '../../components/Modal/'
 
 const mapStateToProps = state => ({
@@ -17,6 +17,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(toggleModal())
     dispatch(updateArticle(article))
   },
+  removeArticle: id => dispatch(removeArticle(id)),
   toggleModal: () => dispatch(toggleModal())
 })
 

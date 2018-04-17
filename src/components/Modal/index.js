@@ -3,7 +3,7 @@ import uuid from 'uuid/v1'
 
 import style from './style.styl'
 
-const Modal = ({ updateArticle, addArticle, visible, toggleModal, article }) => {
+const Modal = ({ updateArticle, addArticle, removeArticle, visible, toggleModal, article }) => {
   let title
   let text
   if (visible) {
@@ -23,6 +23,11 @@ const Modal = ({ updateArticle, addArticle, visible, toggleModal, article }) => 
           <p> Text:</p>
           <textarea ref={node => { text = node }} defaultValue={article ? article.text : ''} />
           <button className={style.primary} type='submit'>{article ? 'Edit' : 'Add'}</button>
+          {article && <button onClick={e => {
+            e.preventDefault()
+            removeArticle(article.id)
+            toggleModal()
+          }}>Delete</button>}
           <button className={style.normal} onClick={e => {
             e.preventDefault()
             toggleModal()
