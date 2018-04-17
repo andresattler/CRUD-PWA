@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
 
 module.exports = {
-   output: {
+  output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
@@ -18,15 +18,16 @@ module.exports = {
     		use: [
           { loader: 'style-loader' },
           {
-            loader: 'css-loader',				  
+            loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[name]-[local][hash:base64:6]'
+              localIdentName: '[name]-[local][hash:base64:6]',
+              camelCase: true
             }
           },
-          { loader: "stylus-loader" }
+          { loader: 'stylus-loader' }
         ]
-			}		
+      }
 	 ]
   },
   resolve: {

@@ -4,11 +4,13 @@ import ArticleList from './container/ArticleList/'
 import AddArticleButton from './container/AddArticleButton/'
 import AddModal from './container/AddModal/'
 
+import style from './style.styl'
+
 const App = () =>
-  <React.Fragment>
+  <div className={style.container}>
     <ArticleList />
     <AddArticleButton title='+' />
     <AddModal />
-  </React.Fragment>
+  </div>
 
 export default App
