@@ -7,10 +7,7 @@ This is a small CRUD App with a persistant local storage using redux-persistant,
 
 * create, read, update, delete articles 
 * save state in local browser storage
-
-## Future Features
-
-* full offline suport
+* full offline suport with service-worker
 * manifest file and icons for saving on homescreen
 
 ## Demo
