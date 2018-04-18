@@ -1,0 +1,12 @@
+CACHE MANIFEST
+#ver:18.4.2018, 15:43:47
+#plugin:5.0.0-0
+
+CACHE:
+../app.js
+../styles.css
+../
+../manifest.json
+
+NETWORK:
+*

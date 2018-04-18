@@ -1,0 +1,8 @@
+{
+  "name": "CRUD-PWA",
+  "short_name": "crud-pwa",
+  "lang": "en-US",
+  "start_url": "https://andresattler.github.io/CRUD-PWA/",
+  "display": "standalone",
+  "theme_color": "#03a9f4"
+}

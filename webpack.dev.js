@@ -7,9 +7,29 @@ module.exports = merge(common, {
     'react-hot-loader/patch',
     './src/index.js'
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            localIdentName: '[name]-[local]-[hash:base64:6]',
+            camelCase: true
+          }
+        },
+        {
+          loader: 'stylus-loader'
+        }]
+      }
+    ]
+  },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
+    contentBase: './docs',
     hot: true,
     headers: {
       'Access-Control-Allow-Origin': '*'

@@ -6,6 +6,7 @@ import { createStore } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import { PersistGate } from 'redux-persist/integration/react'
+import { install } from 'offline-plugin/runtime'
 
 import App from './app'
 import reducer from './reducer'
@@ -38,4 +39,8 @@ if (module.hot) {
     const NextApp = require('./app').default
     render(wrapApp(NextApp), rootEl)
   })
+}
+
+if (process.env.NODE_ENV === 'production') {
+  install()
 }
