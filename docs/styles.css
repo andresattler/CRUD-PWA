@@ -1,5 +1,9 @@
+body {
+  margin: 0;
+}
 .-style-container-hAd3oE- {
   width: 100vw;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   flex-flow: column;
@@ -35,7 +39,8 @@
 }
 .-style-modal-1oLMuR- {
   position: fixed;
-  width: 400px;
+  max-width: 400px;
+  width: 80vw;
   padding: 10px;
   margin: 0;
   flex-flow: column;
