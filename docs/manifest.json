@@ -4,5 +4,16 @@
   "lang": "en-US",
   "start_url": "https://andresattler.github.io/CRUD-PWA/",
   "display": "standalone",
-  "theme_color": "#03a9f4"
+  "theme_color": "#03a9f4",
+  "icons": [
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192"
+    }
+  ],
+  "background_color": "#fff"
 }

@@ -4,6 +4,8 @@ var __wpo = {
       "./app.js",
       "./styles.css",
       "./",
+      "./icons/icon-192.png",
+      "./icons/icon-512.png",
       "./manifest.json"
     ],
     "additional": [],
@@ -13,12 +15,13 @@ var __wpo = {
   "hashesMap": {
     "4c2e4fc8c6ec0fbfa8f0ece329e5ef5e2337bd50": "./app.js",
     "ef0d26bf118875d0f004e377130f4b6b6a2d949b": "./styles.css",
-    "67bd7bd39adfe3e2245da45004c36f1b262dfe79": "./",
-    "dc45e5c2efef07ea238ebcbfb9f2288dedea6cb2": "./manifest.json"
+    "81fa9509fe1bba1dfcc006fdbc0ae50dde4c8a10": "./",
+    "1b687c345f3efc72e9d1132ad541fa7730416a3e": "./icons/icon-512.png",
+    "a5812f2717968e6c541653576a6a1b8b15558369": "./manifest.json"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "18.4.2018, 16:11:32",
+  "version": "18.4.2018, 16:34:35",
   "name": "webpack-offline",
   "pluginVersion": "5.0.0-0",
   "relativePaths": true
